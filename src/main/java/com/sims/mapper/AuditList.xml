@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!-- 审核列表的增删查改 -->
+<mapper namespace="com.sims.mapper.AuditListMapper">
+	<insert id="add" parameterType="AuditList">
+		insert into audit_list(no,name,sex,grade,college,major,class_,id,flag) values(#{no},#{name},#{sex},#{grade},#{college},#{major},#{class_},#{id},#{flag})
+	</insert>
+	<delete id="delete" parameterType="AuditList">
+		delete from audit_list where no= #{no}
+	</delete>
+	<update id="update" parameterType="AuditList">
+		update audit_list set name=#{name},sex=#{sex},grade=#{grade},college=#{college},major=#{major},class_=#{class_},id=#{id},flag=#{flag} where no=#{no}
+	</update>
+	<select id="get" resultType="AuditList">
+		select * from audit_list where no= #{no}
+	</select>
+	<select id="list" resultType="AuditList">
+		select * from audit_list
+	</select>
+	<select id="count" resultType="int">
+		select count(*) from audit_list
+	</select>
+</mapper>

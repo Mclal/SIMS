@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!--  管理员账号的增删查改 -->
+<mapper namespace="com.sims.mapper.AdministratorAccountMapper">
+	<insert id="add" parameterType="AdministratorAccount">
+		insert into administrator_account (account,password) values (#{account},#{password})
+	</insert>
+	<delete id="delete" parameterType="AdministratorAccount">
+		delete from administrator_account where account = #{account}
+	</delete>
+	<update id="update" parameterType="AdministratorAccount">
+		update administrator_account set password = #{password} where account = #{account}
+	</update>
+	<select id="get" resultType="AdministratorAccount">
+		select * from administrator_account where account = #{account} 
+	</select>
+	<select id="list" resultType="AdministratorAccount">
+		select * from administrator_account
+	</select>
+	<select id="count" resultType="int">
+		select count(*) from administrator_account
+	</select>
+</mapper>

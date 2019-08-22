@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!--  学生信息的增删查改 -->
+<mapper namespace="com.sims.mapper.StudentInfoMapper">
+	<insert id="add" parameterType="StudentInfo">
+		insert into student_info(no,name,sex,grade,college,major,class_,id) values(#{no},#{name},#{sex},#{grade},#{college},#{major},#{class_},#{id})
+	</insert>
+	<delete id="delete" parameterType="StudentInfo">
+		delete from student_info where no= #{no}
+	</delete>
+	<update id="update" parameterType="StudentInfo">
+		update student_info set name=#{name},sex=#{sex},grade=#{grade},college=#{college},major=#{major},class_=#{class_},id=#{id} where no=#{no}
+	</update>
+	<select id="get" resultType="StudentInfo">
+		select * from student_info where no= #{no}
+	</select>
+	<select id="list" resultType="StudentInfo">
+		select * from student_info
+	</select>
+	<select id="count" resultType="int">
+		select count(*) from student_info
+	</select>
+</mapper>
