@@ -75,7 +75,7 @@
 									<td align="center" width="8%" class="table-left"
 										style="vertical-align: middle;">学号</td>
 									<td align="center" width="12%"><input type="text"
-										class="form-control" name="no" value="${n.no }"></td>
+										class="form-control" name="no" value="${n.no }" readonly="readonly"></td>
 								</tr>
 								<tr>
 									<td align="center" width="8%" class="table-left"
